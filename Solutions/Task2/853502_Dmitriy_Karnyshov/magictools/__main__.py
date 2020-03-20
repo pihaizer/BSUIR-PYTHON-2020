@@ -1,9 +1,8 @@
 import unittest
+from .tests import run_tests as run
 
 def main():
-    tests = unittest.defaultTestLoader.discover('.')
-    test_runner = unittest.runner.TextTestRunner()
-    test_runner.run(tests)
+    run.main()
 
 if __name__ == "__main__":
     main()
