@@ -19,4 +19,6 @@ python .../main.py -nf ".../numbers.txt" -ms -of ".../merge_sort_numbers.txt"\
 так что проблем при поиске какой-либо части кода возникнуть не должно.
 
 Telegram: +375-29-126-4069\
-Почта: malhin_vladimir@gmail.com
+Почта: malhin_vladimir@gmail.com\
+Discord: pihaizer#0193\
+VK: vk.com/pihaizer
