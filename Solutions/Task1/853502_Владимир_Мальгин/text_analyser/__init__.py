@@ -1,0 +1,2 @@
+from text_analyser.word_count import count_words, count_words_sorted
+from text_analyser.random_sentence import generate_random_sentence
