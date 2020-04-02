@@ -1,6 +1,0 @@
-custom_decorators
-design_patterns
-external_sort
-jsonformatter
-linalg
-tests
