@@ -16,7 +16,7 @@ Python requires: >= 3.8
 Для запуска всех тестов используем "coverage run -m unittest discover" (необходимо подождать около минуты).  
 Для оценки покрытия кода тестами прописываем "coverage report -m" и получаем необходимую информацию
 
-Контакты
+Контакты:
 -----------------------------------
 VK: https://vk.com/ktoyapotvoyemu  
 Telegram: @papelbon  
