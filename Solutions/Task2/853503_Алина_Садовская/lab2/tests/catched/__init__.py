@@ -1,0 +1,1 @@
+from .catched_test import TestCached

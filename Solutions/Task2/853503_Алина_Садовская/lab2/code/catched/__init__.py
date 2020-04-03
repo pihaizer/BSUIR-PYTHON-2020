@@ -1,0 +1,1 @@
+from .catched import cached
