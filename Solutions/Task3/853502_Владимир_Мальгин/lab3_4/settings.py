@@ -95,7 +95,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
         'USER': 'postgres',
-        'PASSWORD': 'Ceckbr1976'
+        'PASSWORD': ''
     }
 }
 
@@ -159,7 +159,7 @@ COMPRESS_PRECOMPILERS = (
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'test.malhin@gmail.com'
-EMAIL_HOST_PASSWORD = 'Ceckbr1976'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
 LOGGING = {
