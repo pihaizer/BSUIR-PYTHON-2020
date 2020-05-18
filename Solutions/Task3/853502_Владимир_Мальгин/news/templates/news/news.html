@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% include "sidebar/sidebar.html" %}
+
+<link rel="stylesheet" href={% static "news/news.css" %}>
+{% if news %}
+    <div class="news">
+        {% for post in news %}
+            {% include "news/post.html" with post=post %}
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

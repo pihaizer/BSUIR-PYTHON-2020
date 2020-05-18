@@ -1,0 +1,43 @@
+.login-containter {
+  .input-fields {
+    width: 100%;
+
+    .input-field {
+      display: inline-block;
+      width: 100%;
+      margin: 0.3rem 0;
+
+      label {
+        color: black;
+        width: 30%;
+      }
+
+      input {
+        float: right;
+        width: 70%;
+
+        @media only screen and (max-width: 1280px) {
+          float: none;
+          width: 100%
+        }
+      }
+    }
+  }
+
+  .errors {
+    color: red;
+  }
+
+  .login-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+
+    p.or {
+      text-align: center;
+      color: black;
+      margin: 0.3rem 0;
+    }
+  }
+}

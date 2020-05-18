@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% load static %}
+    {% if debug %}
+        <link rel="stylesheet/less" href={% static "register/register.less" %}>
+    {% else %}
+        {% load compress %}
+        {% compress css %}
+            <link rel="stylesheet" type="text/less" href={% static "register/register.less" %}>
+        {% endcompress %}
+    {% endif %}
+    <div class="register">
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="input-field">
+                    {% if field.field.required %}<span class="required-dot">*</span>{% endif %}{{ field.label }}:
+                    {{ field }}
+                    <div class="errors">
+                        {{ field.errors }}
+                    </div>
+                </div>
+            {% endfor %}
+            {#            <div class="errors">#}
+            {#                {{ form.non_field_errors }}#}
+            {#            </div>#}
+            <div class="register-btn-holder">
+                <button class="register-btn">Register</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

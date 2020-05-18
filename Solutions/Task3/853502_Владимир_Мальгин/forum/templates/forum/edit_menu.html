@@ -1,0 +1,15 @@
+{% load static %}
+{% load compress %}
+{% compress css %}
+    <link rel="stylesheet" type="text/less" href="{% static 'forum/edit_menu.less' %}">
+{% endcompress %}
+<script src="{% static 'forum/edit_menu.js' %}"></script>
+<div class="edit_menu">
+    <div class="leave_message_text">Leave your message down here:</div>
+    <input type="hidden" id="editMenuMessageId">
+    <input type="hidden" id="editMenuThemeId">
+    <textarea id="editMenuTextArea" rows="10"></textarea>
+    <div class="send-btn">
+        <button class="vivaldi-button" onclick="sendMessage()">Send</button>
+    </div>
+</div>

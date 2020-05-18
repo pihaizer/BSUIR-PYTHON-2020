@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% load static %}
+    {% load compress %}
+    {% compress css %}
+        <link rel="stylesheet" type="text/less" href={% static "register/success.less" %}>
+    {% endcompress %}
+
+    <div class="success">
+        A verification email has been sent to {{ email }}. Please follow the instructions in the email.
+        You will be redirected back in
+        <span id="timeLeft"></span>
+    </div>
+
+    <script src={% static "register/success.js" %}></script>
+{% endblock %}

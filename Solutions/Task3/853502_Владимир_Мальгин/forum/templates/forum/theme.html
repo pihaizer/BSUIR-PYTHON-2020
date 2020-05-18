@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% load compress %}
+
+{% block content %}
+    {% compress css %}
+        <link rel="stylesheet" type="text/less" href="{% static "forum/theme.less" %}"/>
+    {% endcompress %}
+    {% include "sidebar/sidebar.html" %}
+    <div class="theme">
+        <div class="theme-header">
+            <div class="theme-header-name">{{ theme.name }}</div>
+            <div class="theme-header-description">{{ theme.description }}</div>
+        </div>
+        <div class="theme-messages" id="editContainerAfterSending">
+            {% for message in theme.messages.all %}
+                <div class="theme-messages-message_container" id="containerToHide{{ message.id }}">
+                    <div class="theme-messages-message_container-add_info">
+                        <div class="theme-messages-message_container-add_info-sender">{{ message.sender.username }}</div>
+                        <div class="theme-messages-message_container-add_info-pub_date">{{ message.pub_date | date:"y/m/d h:i" }}</div>
+                    </div>
+                    <div class="theme-messages-message_container-text">
+                        <div id="messageText{{ message.id }}">{{ message.text }}</div>
+                    </div>
+                    {% if message.sender.id == user.id %}
+                        <div onclick="editMessage({{ message.id }})">&#x270E</div>
+                        <div onclick="deleteMessage({{ message.id }})">&times</div>
+                    {% endif %}
+                </div>
+                <div id="editMessageContainer{{ message.id }}"></div>
+            {% endfor %}
+        </div>
+        {% if user.is_authenticated %}
+        <div id="editMenu">
+            {% include "forum/edit_menu.html" %}
+        </div>
+        {% endif %}
+    </div>
+    <script>var themeId = {{ theme.id }};</script>
+    <script src="{% static 'forum/theme.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static %}
+{% load compress %}
+{% compress css %}
+    <link rel="stylesheet" type="text/less" href="{% static 'login/login.less' %}"/>
+{% endcompress %}
+<script src={% static 'login/login.js' %}></script>
+<div class="login-containter">
+    {% if not user.is_authenticated %}
+    <form id="loginForm">
+        {% csrf_token %}
+        <div class="input-fields">
+            <div class="input-field">
+                <label for="username">Username:</label>
+                {{ login_form.username }}
+            </div>
+            <div class="input-field">
+                <label for="password">Password:</label>
+                {{ login_form.password }}
+            </div>
+        </div>
+        <div id="errorsArea" class="errors">
+        </div>
+        <div class="login-buttons">
+            <input type="button" class="vivaldi-button" onclick="login()" value="Log in"/>
+            <p class="or">or</p>
+            <input type="button" class="vivaldi-button"
+                   onclick="window.location.href = '/register?from=' + location.href;"
+                   value="Register">
+        </div>
+    </form>
+    {% else %}
+    <form action="/logout/" method="post">
+        {% csrf_token %}
+        <button class="vivaldi-button" type="submit">Log out</button>
+    </form>
+    {% endif %}
+</div>

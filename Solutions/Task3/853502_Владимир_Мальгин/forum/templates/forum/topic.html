@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% load compress %}
+
+{% block content %}
+    {% compress css %}
+        <link rel="stylesheet" type="text/less" href="{% static "forum/topic.less" %}"/>
+    {% endcompress %}
+    <div class="topic">
+        <div class="topic-name">
+            {{ topic.name }}
+        </div>
+        {% for theme in topic.themes.all %}
+            <div class="topic-theme">
+                <a class="topic-theme-link" href="/forum/theme/{{ theme.id }}">{{ theme.name }}</a>
+                <div class="topic-theme-add_info">
+                    <span class="topic-theme-add_info-create_date">{{ theme.create_date | date:"d/m/y H:i" }},</span>
+                    <span class="topic-theme-add_info-creator">{{ theme.creator }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

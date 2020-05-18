@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" href={% static "news/post.css" %}>
+
+{% if post %}
+    <div class="post">
+        <div class="header">
+            {{post.header}}
+        </div>
+        <div class="pub_date">
+            Posted {{post.pub_date}}
+        </div>
+        <div class="text">
+            {{post.text}}
+        </div>
+    </div>
+{% endif %}

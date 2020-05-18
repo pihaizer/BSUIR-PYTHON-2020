@@ -1,0 +1,32 @@
+{% load static %}
+{% load compress %}
+{% if debug %}
+    <link href="{% static 'sidebar/sidebar.less' %}" rel="stylesheet/less">
+{% else %}
+    {% compress css %}
+        <link rel="stylesheet" type="text/less" href="{% static 'sidebar/sidebar.less' %}"/>
+    {% endcompress %}
+{% endif %}
+<script src={% static 'sidebar/sidebar.js' %}></script>
+{% if login_form %}
+    <div class="mobile-log-buttons">
+        {% if not user.is_authenticated %}
+            <button onclick="window.location.href = '/register';">Register</button>
+            <button onclick="openModal()">Log in</button>
+        {% else %}
+            <form action="/logout/" method="post">
+                {% csrf_token %}
+                <button type="submit">Log out</button>
+            </form>
+        {% endif %}
+    </div>
+    <div class="sidebar">
+        {% include "login/login.html" %}
+    </div>
+    <div id="loginModal" class="login-modal">
+        <div class="content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            {% include "login/login.html" %}
+        </div>
+    </div>
+{% endif %}

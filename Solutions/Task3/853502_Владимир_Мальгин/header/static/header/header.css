@@ -1,0 +1,60 @@
+body {
+  background-image: url("../images/bg.jpg");
+}
+
+.header .name {
+  margin: 0 auto;
+  max-width: max-content;
+  text-align: center;
+  font-size: 3rem;
+  max-font-size: 3vm;
+  font-family: Vivaldi, serif;
+  font-weight: bolder;
+  font-style: italic;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.header .name p {
+  margin: 1rem 0;
+}
+
+.link-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: flex;
+  padding: 0 7rem;
+}
+
+.link-container .link-text {
+  appearance: button;
+  flex: 1;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 0.1rem;
+  border-radius: 0.5rem;
+}
+
+.link-container .link-text button.log-in {
+  width: 100%;
+}
+
+.link-container .link-text:hover {
+  background-color: rgba(169, 169, 169, 0.2);
+}
+
+@media only screen and (max-width: 768px){
+  .link-container {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header .name {
+    font-size: 10vw;
+  }
+}

@@ -1,0 +1,54 @@
+.register {
+  width: 60%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+
+  .input-field {
+    display: inline-block;
+    width: 100%;
+    margin: 0.3rem 0;
+
+    label {
+      color: white;
+      width: 30%;
+    }
+
+    input {
+      float: right;
+      width: 70%;
+
+      @media only screen and (max-width: 768px) {
+        float: none;
+        width: 100%
+      }
+    }
+
+    .required-dot {
+      color: red;
+      font-size: 0.8rem;
+    }
+
+    .errors {
+      color: red;
+
+    }
+  }
+
+  .register-btn-holder {
+    text-align: center;
+
+    .register-btn {
+      width: 60%;
+      margin: 0.5rem auto;
+      opacity: 80%;
+      font-size: 1.5rem;
+      font-family: Vivaldi, serif;
+      font-weight: bold;
+      border-radius: 0.5rem;
+    }
+  }
+}

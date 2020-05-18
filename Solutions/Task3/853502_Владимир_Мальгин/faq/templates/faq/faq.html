@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% load compress %}
+
+{% block content %}
+    {% compress css %}
+        <link rel="stylesheet" type="text/less" href="{% static "faq/faq.less" %}"/>
+    {% endcompress %}
+    <div class="faq">
+        <div class="faq-header">frequently asked questions</div>
+        <div class="faq-content">
+            {% for qa in faq %}
+                <div class="faq-content-question">
+                    - {{ qa.question }}
+                </div>
+                <div class="faq-content-answer">
+                    - {{ qa.answer }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
