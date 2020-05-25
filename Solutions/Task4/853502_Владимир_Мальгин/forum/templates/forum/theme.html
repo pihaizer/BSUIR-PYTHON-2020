@@ -23,8 +23,8 @@
                         <div id="messageText{{ message.id }}">{{ message.text }}</div>
                     </div>
                     {% if message.sender.id == user.id %}
-                        <div onclick="editMessage({{ message.id }})">&#x270E</div>
-                        <div onclick="deleteMessage({{ message.id }})">&times</div>
+                        <div class="theme-messages-message_container-edit" onclick="editMessage({{ message.id }})">&#x270E</div>
+                        <div class="theme-messages-message_container-delete" onclick="deleteMessage({{ message.id }})">&times</div>
                     {% endif %}
                 </div>
                 <div id="editMessageContainer{{ message.id }}"></div>

@@ -5,6 +5,11 @@ from datetime import datetime
 
 
 class Topic(models.Model):
+    class Meta:
+        indexes = [
+            models.Index(fields=['-create_date'])
+        ]
+
     name = models.CharField(max_length=256)
     creator = models.ForeignKey(to=get_user_model(), on_delete=models.DO_NOTHING)
     create_date = models.DateTimeField()

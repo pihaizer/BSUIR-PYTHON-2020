@@ -3,6 +3,11 @@ from django.db import models
 
 
 class Post(models.Model):
+    class Meta:
+        indexes = [
+            models.Index(fields=['-pub_date'])
+        ]
+
     header = models.CharField(max_length=50)
     text = models.TextField()
     pub_date = models.DateTimeField("date published")
